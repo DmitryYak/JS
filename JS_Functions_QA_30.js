@@ -67,7 +67,7 @@ wood.method_2(10,20)
 
 wood_2.method_2(100, 500)
 
-//тернарный оператор
+ //тернарный оператор
 let t4 = 20;
 let f3 = (t4 > 10) ?
     (ttt1, ttt2) => console.log(ttt1 + ttt2):

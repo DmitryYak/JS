@@ -146,7 +146,30 @@ function myFn(a, b) {
 }
 myFn(2, 3)
 
+const personOne = {
+    name: 'Bob',
+    age: 21
+}
+function increasPersonAge (person) {  //in the function no{t recomended use changeble object
+    person.age += 1
+    return person
+}
 
+increasPersonAge(personOne)
+console.log('person age', personOne.age)
+
+const personOne2 = {
+name: 'bob',
+age: 21
+}
+function increasPersonAge2 (person) {
+    const updatedPeson = Object.assign({}, person)
+    updatedPeson.age += 1
+    return updatedPeson
+}
+const updatedPesonOne = increasPersonAge2 (personOne2)
+console.log (personOne2.age)
+console.log (updatedPesonOne.age)
 
 
 

@@ -172,6 +172,49 @@ console.log (personOne2.age)
 console.log (updatedPesonOne.age)
 
 
+function printMyName() {
+    console.log('setTimeout 1000: ', 'DimaYak') //callback function
+}
+//setTimeout(printMyName, 1000)
+
+const button = {
+    width: 200,
+    text: 'buy'
+}
+
+const redButton = {
+    ...button,    //!!!! 
+    color: 'red'  //add new property
+}
+console.table(redButton)
+
+let myCity4 = 'Drezna'
+let myName = "Dmitry"
+console.log(`'My name is ${myName} and i am from ${myCity4}`) //шаблонные строки / template strings
+
+let gira = function(a, b) {  //функциональное выражение /functional expression - no name function
+    let c 
+    c = a + b
+    console.log(c)
+    return c
+}
+gira(4,6)
+
+setTimeout(function(){      //functional expression
+    console.log('new message')
+}, 1000)
+
+// const myFunction = (a, b) => {
+//     let = ccc
+//     a = a + 1
+//     ccc = a + b
+//     return ccc
+// }
+// myFunction(5, 3)
+
+// setTimeout(() => {
+//     console.log('message')
+// }, 1000)
 
 
 

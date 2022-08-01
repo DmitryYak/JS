@@ -217,7 +217,76 @@ setTimeout(function(){      //functional expression
 // }, 1000)
 
 
+// function multByFactor(value, multiplier = 1) { // присвоение дефолтного параметра через =
+//     console.log(value, multByFactor)
+//     return value * multiplier
+    
+// }
+// multByFactor(10, 2)
 
+
+// 12 && 15...(15) в
+// 12 || 15...(12) выводит первое значение true
+
+const newPost = (post, addedAt = Date()) => ({  // () - неявный возврат объекта
+    ...post,
+    addedAt,
+})
+const firstPost = {
+    id: 1,
+    author: 'Dmitry'
+}
+newPost(firstPost)
+
+//5:08
+// 'try catch' блок - рекомендуется помещаать все блоки кода с риском ошибок..
+
+const fnWithError = () => {
+    throw new Error('Some error') // генерируется ошибка
+}
+try{
+    fnWithError()   
+} catch (error){
+    console.error(error)
+    console.log(error.message)
+}
+
+console.log('Continue...')
+
+//5:32 array
+
+const myArray = [1, 2, 3]
+console.log(myArray)
+
+const myArray2 = new Array(1, 2, 3) // 2-й вариант создания массива
+console.log(myArray2)
+console.log(myArray[1])
+
+const myArray3 = [1, true, 'Dmitry']
+console.log('MyArray3 has:', myArray.length, 'property')
+
+const myArray4 = [1, true, 'a']
+console.log(myArray4[0])
+myArray4[3] = false
+console.log(`add property in the myArray4: ${myArray4}`)
+
+myArray4.push('Korablik') // add a new element in the end of the array 
+console.log('add a new element in the end of the myArray4', myArray4) 
+
+myArray4.pop() // delete the end element in the array
+console.log(myArray4)
+
+myArray4.unshift('Drezna')
+console.log('unshift', myArray4) // 'unshift' add the new element to the beginning of the array
+
+myArray4.shift() // delete the first element
+console.log('shift', myArray4)
+
+
+const myArray5 = [1, 2, 3]
+console.log(myArray5)
+
+myArray5.forEach(el => console.log('forEach', el * 2))
 
 
 

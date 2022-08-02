@@ -171,7 +171,6 @@ const updatedPesonOne = increasPersonAge2 (personOne2)
 console.log (personOne2.age)
 console.log (updatedPesonOne.age)
 
-
 function printMyName() {
     console.log('setTimeout 1000: ', 'DimaYak') //callback function
 }
@@ -216,10 +215,235 @@ setTimeout(function(){      //functional expression
 //     console.log('message')
 // }, 1000)
 
+// function multByFactor(value, multiplier = 1) { // присвоение дефолтного параметра через =
+//     console.log(value, multByFactor)
+//     return value * multiplier
+    
+// }
+// multByFactor(10, 2)
+
+
+// 12 && 15...(15) в
+// 12 || 15...(12) выводит первое значение true
+
+const newPost = (post, addedAt = Date()) => ({  // () - неявный возврат объекта
+    ...post,
+    addedAt,
+})
+const firstPost = {
+    id: 1,
+    author: 'Dmitry'
+}
+newPost(firstPost)
+
+//5:08
+// 'try catch' блок - рекомендуется помещаать все блоки кода с риском ошибок..
+
+const fnWithError = () => {
+    throw new Error('Some error') // генерируется ошибка
+}
+try{
+    fnWithError()   
+} catch (error){
+    console.error(error)
+    console.log(error.message)
+}
+
+console.log('Continue...')
+
+//5:32 array
+
+const myArray = [1, 2, 3]
+console.log(myArray)
+
+const myArray2 = new Array(1, 2, 3) // 2-й вариант создания массива
+console.log(myArray2)
+console.log(myArray[1])
+
+const myArray3 = [1, true, 'Dmitry']
+console.log('MyArray3 has:', myArray.length, 'property')
+
+const myArray4 = [1, true, 'a']
+console.log(myArray4[0])
+myArray4[3] = false
+console.log(`add property in the myArray4: ${myArray4}`)
+
+myArray4.push('Korablik') // add a new element in the end of the array 
+console.log('add a new element in the end of the myArray4', myArray4) 
+
+myArray4.pop() // delete the end element in the array
+console.log(myArray4)
+
+myArray4.unshift('Drezna')
+console.log('unshift', myArray4) // 'unshift' add the new element to the beginning of the array
+
+myArray4.shift() // delete the first element
+console.log('shift', myArray4)
+
+
+const myArray5 = [1, 2, 3]
+console.log(myArray5)
+
+myArray5.forEach(el => console.log('forEach', el * 2))
 
 
 
 
+let myArray6 = ['Jora', 'Jaba', 'Mora', 7]
+const everyCount = myArray6.forEach(el =>
+console.log(el + ' Foot ' + 2 + ` or ${myArray6[2]}`))
 
+
+
+let myArray8 = {
+    city: 'Drezna',
+    streets: 'Yubileinaya',
+    houses: [
+        1, 3, 8, 12, 14
+    ],
+    shops: [
+        'peterochka', 'verniy', 'krasnobeloe'
+    ],
+}
+
+let housesIntheCity = myArray8.houses.forEach(el => 
+    console.log(`House № ${el} , city is: ${myArray8.city}, street is ${myArray8.street}`))
+
+console.log(housesIntheCity) //method forEach givs undefined
+
+//MAP - returned the new array!
+
+const myArray9 = [1, 2, 3]
+console.log('317: ', myArray9)
+
+const newArray = myArray9.map(el => el * 3)
+
+console.log(newArray) //map added the new array!
+console.log(myArray9) // original array did't change!
+
+//destructuring
+
+const userProfile2 = {
+    name2: 'Dmitry',
+    commentsQty: 23,
+    hasSignedAgreement: false,
+}
+
+const {name2, commentsQty} = userProfile2
+const {hasSignedAgreement} = userProfile2
+
+console.log(name2)
+console.log (commentsQty) 
+
+// destructuring arrays:
+
+const fruits = ['apple', 'banana']
+const [fruitOne, fruitTwo] = fruits
+console.log(fruitOne)
+console.log('343', fruitTwo)
+
+// destructuring in the functions
+
+const userProfile3 = {
+    name3: 'Dmitry',
+    commentsQty3: 23,
+    hasSignedAgreement3: false,  
+}
+const userInfo = ({name3, commentsQty3}) => {
+    if (!commentsQty3) {
+        return `User ${name3} has no comments`
+    }
+    return `User ${name3} has ${commentsQty3} comments`
+}
+userInfo(userProfile3)
+
+
+const instaProfile = {
+    folowers: 4500,
+    photos: 200,
+    liks: 3345
+}
+
+const instaInfo = ({folowers, liks}) => {
+    if (!liks) {
+        console.log(`you don't have ${liks}`)
+    }
+    return console.log(`you have ${liks} likes and ${folowers} folowers`)
+}
+instaInfo(instaProfile)
+
+//conditional instruction условные инструкции
+
+if (instaProfile.folowers < 20) {
+    console.log(`Your folovers less then 20, you have only ${instaProfile.folowers}`)
+}
+else  {
+    console.log(`Your folovers ${instaProfile.folowers}`)
+}
+
+if (!instaProfile.age) {
+    console.log('385', 'You dont have value about age in your profile')
+}
+
+const age2 = 16
+
+if (age2 > 12) {
+    console.log('you adult')
+} else if (age2 >= 18) {
+    console.log ('you are teeneger')
+} else {
+    console.log('you are child')
+}
+
+//instruction in the functions..
+
+const sumPositiveNumbers = (a, b) => {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        return 'one of the arguments is not a number'
+    }
+    if (a <= 0 || b <= 0) {
+        return 'numbers are not positive'
+    }
+    return a + b
+}
+sumPositiveNumbers(14,14)
+
+//switch
+
+const month = 2
+switch (month) {
+    case 12:
+        console.log('December')
+        break
+    case 1:
+        console.log('January')
+        break
+    case 2:
+        console.log('february')
+        break
+    default:
+        console.log('this is not month of winter')
+}
+//ternary operators
+const value = 11
+value
+? console.log('it is true')
+: console.log('it is false')
+
+const value1 = 11
+const value2 = 25
+
+// value1 && value2
+// ? myfunction1(value1, value2)
+// : myfunction2()
+
+let value3 = 11
+console.log('441...', value3 >= 0 ? value3 : -value3)
+
+let value4 = -5
+const res = value4 >= 0 ? value4 : -value4
+console.log(res)
+
+//cicles
 
 

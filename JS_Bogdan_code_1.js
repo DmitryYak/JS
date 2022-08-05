@@ -288,6 +288,294 @@ console.log(myArray5)
 
 myArray5.forEach(el => console.log('forEach', el * 2))
 
+let myArray6 = ['Jora', 'Jaba', 'Mora', 7]
+const everyCount = myArray6.forEach(el =>
+console.log(el + ' Foot ' + 2 + ` or ${myArray6[2]}`))
+
+
+
+let myArray8 = {
+    city: 'Drezna',
+    streets: 'Yubileinaya',
+    houses: [
+        1, 3, 8, 12, 14
+    ],
+    shops: [
+        'peterochka', 'verniy', 'krasnobeloe'
+    ],
+}
+
+let housesIntheCity = myArray8.houses.forEach(el => 
+    console.log(`House № ${el} , city is: ${myArray8.city}, street is ${myArray8.street}`))
+
+console.log(housesIntheCity) //method forEach givs undefined
+
+//MAP - returned the new array!
+
+const myArray9 = [1, 2, 3]
+console.log('317: ', myArray9)
+
+const newArray = myArray9.map(el => el * 3)
+
+console.log(newArray) //map added the new array!
+console.log(myArray9) // original array did't change!
+
+//destructuring
+
+const userProfile2 = {
+    name2: 'Dmitry',
+    commentsQty: 23,
+    hasSignedAgreement: false,
+}
+
+const {name2, commentsQty} = userProfile2
+const {hasSignedAgreement} = userProfile2
+
+console.log(name2)
+console.log (commentsQty) 
+
+// destructuring arrays:
+
+const fruits = ['apple', 'banana']
+const [fruitOne, fruitTwo] = fruits
+console.log(fruitOne)
+console.log('343', fruitTwo)
+
+// destructuring in the functions
+
+const userProfile3 = {
+    name3: 'Dmitry',
+    commentsQty3: 23,
+    hasSignedAgreement3: false,  
+}
+const userInfo = ({name3, commentsQty3}) => {
+    if (!commentsQty3) {
+        return `User ${name3} has no comments`
+    }
+    return `User ${name3} has ${commentsQty3} comments`
+}
+userInfo(userProfile3)
+
+
+const instaProfile = {
+    folowers: 4500,
+    photos: 200,
+    liks: 3345
+}
+
+const instaInfo = ({folowers, liks}) => {
+    if (!liks) {
+        console.log(`you don't have ${liks}`)
+    }
+    return console.log(`you have ${liks} likes and ${folowers} folowers`)
+}
+instaInfo(instaProfile)
+
+//conditional instruction условные инструкции
+
+if (instaProfile.folowers < 20) {
+    console.log(`Your folovers less then 20, you have only ${instaProfile.folowers}`)
+}
+else  {
+    console.log(`Your folovers ${instaProfile.folowers}`)
+}
+
+if (!instaProfile.age) {
+    console.log('385', 'You dont have value about age in your profile')
+}
+
+const age2 = 16
+
+if (age2 > 12) {
+    console.log('you adult')
+} else if (age2 >= 18) {
+    console.log ('you are teeneger')
+} else {
+    console.log('you are child')
+}
+
+//instruction in the functions..
+
+const sumPositiveNumbers = (a, b) => {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        return 'one of the arguments is not a number'
+    }
+    if (a <= 0 || b <= 0) {
+        return 'numbers are not positive'
+    }
+    return a + b
+}
+sumPositiveNumbers(14,14)
+
+//switch
+
+const month = 2
+switch (month) {
+    case 12:
+        console.log('December')
+        break
+    case 1:
+        console.log('January')
+        break
+    case 2:
+        console.log('february')
+        break
+    default:
+        console.log('this is not month of winter')
+}
+//ternary operators
+const value = 11
+value
+? console.log('it is true')
+: console.log('it is false')
+
+const value1 = 11
+const value2 = 25
+
+// value1 && value2
+// ? myfunction1(value1, value2)
+// : myfunction2()
+
+let value3 = 11
+console.log('441...', value3 >= 0 ? value3 : -value3)
+
+let value4 = -5
+const res = value4 >= 0 ? value4 : -value4
+console.log(res)
+
+//cicles
+//for not for arrays!
+const myArray10 = [true, 'abc', 2]
+for (let i = myArray10[2]; i < 5; i++) {
+    console.log('451 for', i)
+}
+
+const myArray11 = ['first', 'second', 'third']
+myArray11.forEach((el, index) => {
+    console.log('456 forEach', el, index)
+})
+
+myArray11.forEach((el, index) => {
+    console.log(el, index)
+})
+
+let myArray12 = ['one', 'two', 'three', true]
+
+myArray12.forEach((el, index) => {
+    console.log(el, index)
+})
+
+//while
+
+let i1 = 0
+while (i1 < 3) {
+    console.log('while', i1)
+    i1++
+}
+
+//do while
+
+let i2 = 0
+do {
+    console.log('do while', i2)
+    i2++
+} while (i2 < 5)
+
+//for in (for objects)
+
+const myObject = {
+    x: 10,
+    y: true,
+    z: 'abc'
+}
+
+for (const key in myObject) {
+    console.log ('for in', key, myObject[key])
+}
+
+// for of
+const myString = 'Hey'
+for (const letter of myString) {
+    console.log (letter)
+}
+
+//convertion object in the arrays
+
+const myObject2 = {
+    x: 10,
+    y: true,
+    z: 'abc',
+}
+Object.keys(myObject2).forEach(key => {
+    console.log(key, myObject2[key])
+})
+
+
+Object.keys(myObject2).forEach(key => {
+    console.log('example', key, myObject2[key])
+})
+
+//klass
+
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+    static mergeComments(first, second) {
+        return `${first} ${second}`
+    }
+}
+
+const firstComment = new Comment('First comment')
+
+firstComment instanceof Comment // true - унаследует методы класса
+
+firstComment.upvote()
+console.log('537 class', firstComment.votesQty)
+firstComment.upvote()
+console.log( firstComment.votesQty)
+
+const secondComment = new Comment('Second comment')
+const thirdComment = new Comment('Third comment')
+
+secondComment.upvote()
+thirdComment.upvote()
+thirdComment.upvote()
+thirdComment.upvote()
+
+console.log('549..' , firstComment.votesQty, secondComment.votesQty, thirdComment.votesQty)
+
+console.log('550',firstComment.hasOwnProperty('text')) // проверка принадлежности свойства к экземпляру класса
+
+Comment.mergeComments('the first text', 'the second text') 
+
+
+//  расширение других классов
+class NumbersArray extends Array {  // extends - расширяет другой класс Array
+    sum() {
+        return this.reduce((el, acc) => acc += el, 0)
+    }
+}
+const myArray13 = new NumbersArray(2, 5, 7)
+console.log(myArray13)
+myArray13.sum()
+
+
+//promise
+
+fetch('https://jsonplaceholder.topicode.com/todos')
+.then(response => {
+    console.log(response)
+    return response.json()
+})
+.then(json => console.log(json))
+.catch(error => console.error(error))
+
 
 
 

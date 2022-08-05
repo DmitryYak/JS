@@ -445,5 +445,136 @@ const res = value4 >= 0 ? value4 : -value4
 console.log(res)
 
 //cicles
+//for not for arrays!
+const myArray10 = [true, 'abc', 2]
+for (let i = myArray10[2]; i < 5; i++) {
+    console.log('451 for', i)
+}
+
+const myArray11 = ['first', 'second', 'third']
+myArray11.forEach((el, index) => {
+    console.log('456 forEach', el, index)
+})
+
+myArray11.forEach((el, index) => {
+    console.log(el, index)
+})
+
+let myArray12 = ['one', 'two', 'three', true]
+
+myArray12.forEach((el, index) => {
+    console.log(el, index)
+})
+
+//while
+
+let i1 = 0
+while (i1 < 3) {
+    console.log('while', i1)
+    i1++
+}
+
+//do while
+
+let i2 = 0
+do {
+    console.log('do while', i2)
+    i2++
+} while (i2 < 5)
+
+//for in (for objects)
+
+const myObject = {
+    x: 10,
+    y: true,
+    z: 'abc'
+}
+
+for (const key in myObject) {
+    console.log ('for in', key, myObject[key])
+}
+
+// for of
+const myString = 'Hey'
+for (const letter of myString) {
+    console.log (letter)
+}
+
+//convertion object in the arrays
+
+const myObject2 = {
+    x: 10,
+    y: true,
+    z: 'abc',
+}
+Object.keys(myObject2).forEach(key => {
+    console.log(key, myObject2[key])
+})
+
+
+Object.keys(myObject2).forEach(key => {
+    console.log('example', key, myObject2[key])
+})
+
+//klass
+
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+    }
+
+    upvote() {
+        this.votesQty += 1
+    }
+    static mergeComments(first, second) {
+        return `${first} ${second}`
+    }
+}
+
+const firstComment = new Comment('First comment')
+
+firstComment instanceof Comment // true - унаследует методы класса
+
+firstComment.upvote()
+console.log('537 class', firstComment.votesQty)
+firstComment.upvote()
+console.log( firstComment.votesQty)
+
+const secondComment = new Comment('Second comment')
+const thirdComment = new Comment('Third comment')
+
+secondComment.upvote()
+thirdComment.upvote()
+thirdComment.upvote()
+thirdComment.upvote()
+
+console.log('549..' , firstComment.votesQty, secondComment.votesQty, thirdComment.votesQty)
+
+console.log('550',firstComment.hasOwnProperty('text')) // проверка принадлежности свойства к экземпляру класса
+
+Comment.mergeComments('the first text', 'the second text') 
+
+
+//  расширение других классов
+class NumbersArray extends Array {  // extends - расширяет другой класс Array
+    sum() {
+        return this.reduce((el, acc) => acc += el, 0)
+    }
+}
+const myArray13 = new NumbersArray(2, 5, 7)
+console.log(myArray13)
+myArray13.sum()
+
+
+//promise
+
+fetch('https://jsonplaceholder.topicode.com/todos')
+.then(response => {
+    console.log(response)
+    return response.json()
+})
+.then(json => console.log(json))
+.catch(error => console.error(error))
 
 

@@ -192,3 +192,49 @@ function my_function4(n) {
     }
   }
   console.log('recurcion_rececion_three', my_function4(9))
+
+
+  var person = {
+    name: 'Ivan',
+    age: 25,
+    hiredYear: 2017
+  }
+
+  person.sayName = function() {
+    console.log('My name is '+ this.name)
+  }
+  person.sayName()
+
+  person.sayAll = function() {
+    for (var i in this) {
+        console.log(i + ' is ' + this[i]);
+    }
+  }
+  person.sayAll()
+
+// 2.3 В этом задании в нашу функцию testStr передаются две строки. 
+// Вам нужно вернуть из функции их суммарную длину.
+  function testStr(a, b) {
+    let x = a;
+    let y = b;
+     return x.length + y.length
+    // Тут нужно написать решение
+ }
+
+
+// 2.3 В этом задании в нашу функцию testStr первым
+// параметром передается строка (переменная str),
+// а вторым - число (переменная n) .
+// Вам нужно вернуть из функции символ строки ,
+// порядковый номер которого указан в переданном в функцию числе.
+
+ let cat = 'cat';
+ let catFunction = function(a) {
+    console.log(cat.charAt(a-1));
+ }
+ catFunction(2)
+
+ function testStr(str, n) {
+    return str.charAt(n - 1);
+    }
+    

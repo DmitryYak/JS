@@ -193,48 +193,80 @@ function my_function4(n) {
   }
   console.log('recurcion_rececion_three', my_function4(9))
 
-
-  var person = {
-    name: 'Ivan',
-    age: 25,
-    hiredYear: 2017
-  }
-
-  person.sayName = function() {
-    console.log('My name is '+ this.name)
-  }
-  person.sayName()
-
-  person.sayAll = function() {
-    for (var i in this) {
-        console.log(i + ' is ' + this[i]);
-    }
-  }
-  person.sayAll()
+//   В этом задании в нашу функцию testStr передаются две строки.
+//   Вам нужно вернуть из функции строку, которая будет включать 
+//   в себя обе этих строки, преобразовав в первой строке все буквы
+//    в заглавные, а во второй - в строчные.
+  
+  function testStr(a, b) {
+    let uperText = a.toUpperCase();
+    let lowText = b.toLowerCase();
+    return uperText + lowText;// Тут нужно написать решение
+}
 
 // 2.3 В этом задании в нашу функцию testStr передаются две строки. 
-// Вам нужно вернуть из функции их суммарную длину.
-  function testStr(a, b) {
-    let x = a;
-    let y = b;
-     return x.length + y.length
+// Вам нужно вернуть индекс позиции, с которой начинается вхождение
+//  второй строки в первую.
+// Sample Input 1:
+// This is a test string
+// test
+
+function testStr(a, b) {
+    var theText = a;
+    return theText.indexOf(b, 0)
+    
     // Тут нужно написать решение
- }
+}
 
+// В этом задании в нашу функцию testStr первым параметром передается строка (переменная str),
+//  а вторым - число (переменная n) . Вам нужно вернуть из функции символ строки ,
+//   порядковый номер которого указан в переданном в функцию числе.
 
-// 2.3 В этом задании в нашу функцию testStr первым
-// параметром передается строка (переменная str),
-// а вторым - число (переменная n) .
-// Вам нужно вернуть из функции символ строки ,
-// порядковый номер которого указан в переданном в функцию числе.
-
- let cat = 'cat';
- let catFunction = function(a) {
-    console.log(cat.charAt(a-1));
- }
- catFunction(2)
-
- function testStr(str, n) {
+function testStr(str, n) {
     return str.charAt(n - 1);
     }
+
+
+
+// В этом задании в нашу функцию testStr передаются две строки.
+// Вам нужно вернуть из функции строку, которая будет включать в себя обе этих строки,
+// преобразовав в первой строке все буквы в заглавные, а во второй - в строчные.
+
+
+function testStr(a, b) {
+    let uperText = a.toUpperCase();
+    let lowText = b.toLowerCase();
+    return uperText + lowText;// Тут нужно написать решение
+}
+
+
+// В этом задании в нашу функцию testStr передаются две строки.
+//  Вам нужно вернуть индекс позиции, с которой начинается вхождение второй строки в первую.
+
+function testStr(a, b) {
+    var theText = a;
+    return theText.indexOf(b, 0)
     
+    // Тут нужно написать решение
+}
+
+// 2.4 массивы
+// В этом задании в нашу функцию testArray передаются два массива случайной длины заполненные случайными числами. 
+// Вам нужно сосчитать сумму всех элементов обоих массивов и возвратить ее из функции.
+
+let myArray14 = [0,1,5,3]
+let myArray15 = [3]
+let sumArray = function(a, b) {
+    let x = 0;
+    for (i = 0; i < a.length; i++){
+    x = x + a[i]
+    }
+    let y = 0
+    for( i = 0; i < b.length; i ++) {
+    y = y + b[i]
+    console.log('length' , x + y);
+    return x + y
+    }
+
+}
+sumArray(myArray14,myArray15)

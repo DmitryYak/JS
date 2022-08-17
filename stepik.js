@@ -288,3 +288,53 @@ function testArray(a, b) {
     // Тут нужно написать решение
 }
 testArray('4326', '297515')
+
+// В этом задании в нашу функцию testDateTime передаются две строки
+// вида "03 November 2017 04:17".
+// Вам нужно превратить строки в даты, сравнить их. Для той, 
+// что больше получить день недели и вернуть его из функции.
+// Название дня недели должно быть по-русски,
+// с большой буквы, например: "Понедельник".
+
+// 19 October 1909 10:27
+// 28 March 1909 00:59
+
+function testDateTime(a, b) {
+    var myDateOne = new Date(a);
+    var myDateTwo = new Date(b);
+    var mainDate;
+    var day;
+    if (myDateOne > myDateTwo) {
+        mainDate = myDateOne;
+    } else {
+       mainDate = myDateTwo;
+    }
+    day = mainDate.getDay();
+    switch (day){
+        case 0 :
+            console.log('Воскресенье')
+        break;
+        case 1:
+            console.log('Понедельник')
+        break;
+        case 2:
+            console.log('Вторник')
+        break;
+        case 3:
+            console.log('Среда')
+        break;
+        case 4:
+            console.log('Четверг')
+        break;
+        case 5:
+            console.log('Пятница')
+        break;
+        case 6:
+            console.log('Суббота')
+        break;
+
+    }    
+    // Тут нужно написать решение
+}
+
+testDateTime('19 October 1909 10:27', '28 March 1909 00:59')

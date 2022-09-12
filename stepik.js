@@ -396,3 +396,27 @@ function testErrorFunc(a, func) {
         }
         return x;
     }
+
+// 3.3 Использование регулярных выражений
+//  В этом задании в нашу функцию testRegExp первым параметром передается случайная строка(переменная s),
+//  а вторым - случайная подстрока(переменная sub_s),
+//   которую нужно использовать в качестве шаблона регулярного выражения. 
+// //   Вам нужно вернуть из функции строку, в которой будут перечислены через запятую
+// //    все совпадения шаблона с первой строкой.
+// Sample Input 1:
+// Andsirdaarrevarariarewbutovearrmararan
+// ar
+// Sample Output 1:
+// ar,ar,ar,ar,ar,ar,ar
+
+    function testRegExp(s, sub_s) {
+       var myRegularExpresiion =  new RegExp (sub_s,'g');
+       var myReg_2 = s.match(myRegularExpresiion);
+       var myArray88 = myReg_2.join()
+   
+       console.log(myArray88)
+       
+
+    }
+
+    testRegExp('Andsirdaarrevarariarewbutovearrmararan', 'ar')

@@ -102,6 +102,10 @@ for (let counter = 1; counter <= 5; counter = counter + 1) {
   console.log("stand up");
   console.log("sit down");
 }
+Gopota = 0;
+for (let gop = 1; gop <= 5; gop = gop + 1) {
+  console.log("hello" + " №" + gop);
+}
 
 for (let counter2 = 1; counter2 <= 5; counter2 = counter2 + 2) {
   console.log("stand up" + counter2);

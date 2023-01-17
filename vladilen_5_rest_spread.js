@@ -59,3 +59,4 @@ const newAdress = { ...address, street: "Tverskaya", code: 123 };
 console.log(newAdress);
 
 // console.log(address.concat());
+

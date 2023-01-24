@@ -45,3 +45,4 @@ const person = {
 
 // person.log();
 person.delayLog();
+

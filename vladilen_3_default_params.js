@@ -6,3 +6,4 @@ function compute(a = 10, b = getDefault(10)) {
 }
 
 console.log(compute());
+

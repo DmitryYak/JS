@@ -74,3 +74,4 @@ let f3 = (t4 > 10) ?
     (ttt1, ttt2) => console.log(ttt1 - ttt2);
     f3(10,30)
 
+

@@ -27,3 +27,4 @@ console.log(str.trimStart());
 
 console.log(str.padStart(10, "1234"));
 console.log(str.padEnd(8, "1234"));
+

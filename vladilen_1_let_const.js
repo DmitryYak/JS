@@ -43,6 +43,7 @@ obj.name = "Igor";
 console.log(obj);
 
 
+
  
 
 

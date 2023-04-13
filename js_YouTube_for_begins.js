@@ -125,4 +125,3 @@ for (let counter4 = 0; counter4 < 3; counter4 = counter4 + 1) {
   Gopnik = Gopnik + money[counter4];
   money[counter4] = 0;
 }
-

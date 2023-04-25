@@ -41,4 +41,3 @@ const obj = { a: 42 };
 obj.name = "Igor";
 
 console.log(obj);
-

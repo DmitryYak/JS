@@ -32,4 +32,3 @@ if (data) {
   result = data + " is awesome!";
   console.log(result);
 }
-

@@ -81,3 +81,4 @@ function isPalindrom(word) {
     return true
 }
 console.log(isPalindrom('abba'))
+
